@@ -4,7 +4,7 @@ import FormText from "./components/FormText";
 import { useState } from "react";
 import React from 'react';
 
-import About from "./components/About";
+// import About from "./components/About";
 
 
 
@@ -55,9 +55,9 @@ function App() {
 
         <FormText textBoxName = "My Text Box" mode = {mode}/>
       </div>
-      <div className="container">
+      {/* <div className="container">
         <About/>
-      </div>
+      </div> */}
 
     </>
     
