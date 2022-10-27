@@ -1,8 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import FormText from "./components/FormText";
-import { useState } from "react";
-import React from 'react';
+import React, { useState }  from 'react';
 import Alert from "./components/Alert";
 // import About from "./components/About";
 
@@ -19,9 +18,13 @@ function App() {
   const showAlert = (message, type) => {
 
     setAlert({
-      msg : message,
-      type : type
-    })
+      msg: message,
+      type: type
+    });
+    setTimeout(() => {
+
+      setAlert(null);
+    }, 2000);
 
   }
 
@@ -36,6 +39,7 @@ function App() {
     else{ 
       setMode('light');
       document.body.style.backgroundColor = 'white';
+      showAlert("Light Mode enabled Successfully","success");
     }
   }
   
@@ -61,9 +65,9 @@ function App() {
     <>
     {/* <Navbar title="RajuTextUtils" aboutText="About Me"/> */}
     <Navbar title="RajuTextUtils" aboutText="About me" mode= {mode} toggleMode = {toggleMode}/>
-    <Alert alert= {alert}/>
+    <Alert alert = {alert}/>
       <div className="container">
-        <FormText textBoxName = "My Text Box" mode = {mode}/>
+        <FormText showAlert = {showAlert} textBoxName = "My Text Box" mode = {mode}/>
       </div>
       {/* <div className="container">
         <About/>

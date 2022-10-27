@@ -9,6 +9,7 @@ export default function FormText(props) {
     console.log("UpperCase Button clicked");
     const newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Uppercase is Done","success");
   }
 
   const handleOnChange = (event) => {
@@ -20,6 +21,8 @@ export default function FormText(props) {
     console.log("Lower case button clicked");
     const newText = text.toLowerCase();
     setText(newText); 
+    props.showAlert("LowerCase is Done","success");
+
   }
 
   const handleSavePdf = () => {
@@ -32,6 +35,8 @@ export default function FormText(props) {
           doc.save('sample.pdf');
       }
     });
+    props.showAlert("PDF got saved","success");
+
 
   }
 
